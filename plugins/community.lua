@@ -5,13 +5,28 @@ return {
   -- available plugins can be found at https://github.com/AstroNvim/astrocommunity
 
   { import = "astrocommunity.colorscheme.catppuccin" },
-  { import = "astrocommunity.colorscheme.gruvbox-nvim" },
-  { import = "astrocommunity.colorscheme.tokyonight-nvim" },
-  -- { import = "astrocommunity.completion.copilot-lua-cmp" },
+  { import = "astrocommunity.colorscheme.gruvbox-baby" },
+  { import = "astrocommunity.colorscheme.mini-base16" },
+  { import = "astrocommunity.colorscheme.onedarkpro-nvim" },
+  { import = "astrocommunity.colorscheme.monokai-pro-nvim" },
+  { import = "astrocommunity.colorscheme.mellow-nvim" },
   { import = "astrocommunity.motion.hop-nvim" },
   { import = "astrocommunity.motion.nvim-spider" },
-  { import = "astrocommunity.terminal-integration.vim-tmux-yank" },
-  -- { import = "astrocommunity.split-and-window.minimap-vim" },
   { import = "astrocommunity.editing-support.true-zen-nvim" },
-  -- { import = "astrocommunity.editing-support.multicursors-nvim" },
+  {
+    "loctvl842/monokai-pro.nvim",
+    config = function()
+      require("monokai-pro").setup {
+        filter = "spectrum", -- classic | octagon | pro | machine | ristretto | spectrum
+      }
+    end,
+  },
+  -- {
+  --   "olimorris/onedarkpro.nvim",
+  --   opts = {
+  --     colors = {
+  --       bg = "#"
+  --     }
+  --   }
+  -- }
 }
