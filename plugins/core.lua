@@ -20,17 +20,24 @@ return {
       return opts
     end,
   },
+  { "rcarriga/nvim-notify", enabled = false },
+  { "max397574/better-escape.nvim", enabled = false },
   {
     "nvim-neo-tree/neo-tree.nvim",
     opts = function(_, opts)
-      opts.sources = { "filesystem" }
+      -- opts.sources = { "filesystem", "document_symbols" }
       opts.source_selector.winbar = false
+      opts.source_selector.statusline = true
       return opts
     end,
   },
-  -- You can disable default plugins as follows:
-  -- { "max397574/better-escape.nvim", enabled = false },
-  --
+  {
+    "rebelot/heirline.nvim",
+    opts = function(_, opts)
+      opts.winbar = false
+      return opts
+    end,
+  },
   -- You can also easily customize additional setup of plugins that is outside of the plugin's setup call
   -- {
   --   "L3MON4D3/LuaSnip",

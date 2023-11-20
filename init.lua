@@ -17,11 +17,49 @@ return {
     },
   },
   -- Set colorscheme to use
-  colorscheme = "gruvbox-baby",
+  colorscheme = "everforest",
   -- Diagnostics configuration (for vim.diagnostics.config({...})) when diagnostics are on
   diagnostics = {
     virtual_text = true,
     underline = true,
+  },
+  icons = {
+    VimIcon = "",
+    ScrollText = "",
+  },
+  heirline = {
+    -- define the separators between each section
+    separators = {
+      left = { "", " " }, -- separator for the left side of the statusline
+      right = { " ", "" }, -- separator for the right side of the statusline
+      tab = { "", "" },
+    },
+    -- add new colors that can be used by heirline
+    colors = function(hl)
+      local get_hlgroup = require("astronvim.utils").get_hlgroup
+      -- use helper function to get highlight group properties
+      local comment = get_hlgroup "Comment"
+      local fileinfo = get_hlgroup "DiffText"
+      hl.git_branch_fg = comment.fg
+      hl.git_added = comment.fg
+      hl.git_changed = comment.fg
+      hl.git_removed = comment.fg
+      hl.blank_bg = get_hlgroup("Folded").fg
+      hl.file_info_bg = get_hlgroup("Error").fg
+      hl.file_info_fg = fileinfo.bg
+      hl.nav_icon_bg = get_hlgroup("String").fg
+      hl.nav_fg = hl.nav_icon_bg
+      hl.folder_icon_bg = fileinfo.bg
+      return hl
+    end,
+    attributes = {
+      mode = { bold = false },
+    },
+    icon_highlights = {
+      file_icon = {
+        statusline = false,
+      },
+    },
   },
   lsp = {
     -- customize lsp formatting options
@@ -74,6 +112,9 @@ return {
   -- anything that doesn't fit in the normal config locations above can go here
   polish = function()
     vim.lsp.set_log_level "off"
+    vim.wo.foldcolumn = "0"
+    vim.opt.guicursor = "n-v-c-sm:block,i-ci-ve:ver50-Cursor,r-cr-o:hor20"
+    -- vim.opt_global.guicursor = "n-v-c-sm:block,i-ci-ve:ver25-Cursor,r-cr-o:hor20"
     -- vim.api.nvim_create_autocmd("BufWritePre", {
     --   pattern = { "*.tsx", "*.ts" },
     --   command = "silent! EslintFixAll",
