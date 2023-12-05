@@ -4,12 +4,8 @@ return {
   -- example of imporing a plugin, comment out to use it or add your own
   -- available plugins can be found at https://github.com/AstroNvim/astrocommunity
 
-  { import = "astrocommunity.colorscheme.catppuccin" },
+  { import = "astrocommunity.colorscheme.neosolarized-nvim" },
   { import = "astrocommunity.colorscheme.gruvbox-baby" },
-  { import = "astrocommunity.colorscheme.dracula-nvim" },
-  { import = "astrocommunity.colorscheme.mini-base16" },
-  { import = "astrocommunity.colorscheme.onedarkpro-nvim" },
-  { import = "astrocommunity.colorscheme.monokai-pro-nvim" },
   { import = "astrocommunity.colorscheme.mellow-nvim" },
   { import = "astrocommunity.motion.hop-nvim" },
   { import = "astrocommunity.motion.harpoon" },

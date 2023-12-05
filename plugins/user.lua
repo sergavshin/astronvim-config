@@ -10,8 +10,16 @@ return {
   --   end,
   -- },
   {
-    "sainnhe/everforest",
-    init = function() vim.g.everforest_background = "hard" end,
+    "neanias/everforest-nvim",
+    lazy = false,
+    version = false,
+    priority = 1000,
+  },
+  {
+    "AlexvZyl/nordic.nvim",
+    lazy = false,
+    priority = 1000,
+    config = function() require("nordic").load() end,
   },
   {
     "chrisgrieser/nvim-spider",
