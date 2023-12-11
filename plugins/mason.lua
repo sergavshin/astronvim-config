@@ -29,6 +29,7 @@ return {
         "svelte",
         "taplo",
         "tsserver",
+        "tailwindcss",
         "vimls",
         "volar",
         "yamlls",
@@ -40,7 +41,7 @@ return {
     "jay-babu/mason-null-ls.nvim",
     -- overrides `require("mason-null-ls").setup(...)`
     opts = {
-      ensure_installed = { "prettier", "stylua" },
+      ensure_installed = { "prettier", "stylua", "luacheck", "ansible-lint", "fixjson", "yamllint", "stylelint" },
     },
   },
   {
