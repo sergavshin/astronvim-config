@@ -83,6 +83,18 @@ return {
       --   return true
       -- end
     },
+    config = {
+      stylelint_lsp = {
+        filetypes = {
+          "css",
+          "less",
+          "scss",
+          "sugarss",
+          "vue",
+          "wxss",
+        },
+      },
+    },
     -- enable servers that you already have installed without mason
     servers = {
       -- "pyright"
