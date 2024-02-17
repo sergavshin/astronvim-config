@@ -17,7 +17,7 @@ return {
     },
   },
   -- Set colorscheme to use
-  colorscheme = "everforest",
+  colorscheme = "catppuccin",
   -- Diagnostics configuration (for vim.diagnostics.config({...})) when diagnostics are on
   diagnostics = {
     virtual_text = true,
@@ -32,7 +32,7 @@ return {
     separators = {
       left = { "", " " }, -- separator for the left side of the statusline
       right = { " ", "" }, -- separator for the right side of the statusline
-      tab = { "", "" },
+      -- tab = { "", "" },
     },
     -- add new colors that can be used by heirline
     colors = function(hl)

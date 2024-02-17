@@ -7,6 +7,7 @@ return {
   { import = "astrocommunity.colorscheme.neosolarized-nvim" },
   { import = "astrocommunity.colorscheme.gruvbox-baby" },
   { import = "astrocommunity.colorscheme.mellow-nvim" },
+  { import = "astrocommunity.colorscheme.catppuccin" },
   { import = "astrocommunity.motion.hop-nvim" },
   { import = "astrocommunity.motion.harpoon" },
   {
