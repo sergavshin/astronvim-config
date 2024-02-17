@@ -1,26 +1,4 @@
 return {
-  -- You can also add new plugins here as well:
-  -- Add plugins, the lazy syntax
-  -- "andweeb/presence.nvim",
-  -- {
-  --   "ray-x/lsp_signature.nvim",
-  --   event = "BufRead",
-  --   config = function()
-  --     require("lsp_signature").setup()
-  --   end,
-  -- },
-  {
-    "neanias/everforest-nvim",
-    lazy = false,
-    version = false,
-    priority = 1000,
-  },
-  {
-    "AlexvZyl/nordic.nvim",
-    lazy = false,
-    priority = 1000,
-    config = function() require("nordic").load() end,
-  },
   {
     "chrisgrieser/nvim-spider",
     keys = {
