@@ -1,5 +1,29 @@
 return {
   {
+    "catppuccin/nvim",
+    name = "catppuccin",
+    priority = 1000,
+    lazy = false,
+    config = function()
+      require("catppuccin").setup {
+        flavour = "mocha",
+        integrations = {
+          hop = true,
+          gitsigns = true,
+          gitgutter = true,
+          cmp = true,
+          mason = true,
+          harpoon = true,
+          treesitter = true,
+          which_key = true,
+          indent_blankline = true,
+          neotest = true,
+          aerial = true,
+        },
+      }
+    end,
+  },
+  {
     "chrisgrieser/nvim-spider",
     keys = {
       {
@@ -71,37 +95,21 @@ return {
         -- add a component for the current diagnostics if it exists and use the right separator for the section
         status.component.diagnostics { surround = { separator = "right" } },
         -- add a component to display LSP clients, disable showing LSP progress, and use the right separator
-        status.component.lsp { lsp_progress = false, surround = { separator = "right" } },
-        -- NvChad has some nice icons to go along with information, so we can create a parent component to do this
-        -- all of the children of this table will be treated together as a single component
-        {
-          -- define a simple component where the provider is just a folder icon
-          status.component.builder {
-            -- astronvim.get_icon gets the user interface icon for a closed folder with a space after it
-            { provider = require("astronvim.utils").get_icon "FolderClosed" },
-            -- add padding for icon
-            padding = { left = 2, right = 0 },
-            -- set the foreground color to be used for the icon
-            hl = { fg = "bg" },
-            -- use the right separator and define the background color
-            surround = { separator = "right", color = "file_info_bg" },
-          },
-          -- add a file information component and only show the current working directory name
-          status.component.file_info {
-            -- we only want filename to be used and we can change the fname
-            -- function to get the current working directory name
-            filename = { fname = function(nr) return vim.fn.getcwd(nr) end, padding = { left = 1 } },
-            -- disable all other elements of the file_info component
-            file_icon = false,
-            file_modified = false,
-            file_read_only = false,
-            hl = { fg = "bg" },
-            -- use no separator for this part but define a background color
-            surround = {
-              separator = "none",
-              color = { main = "file_info_bg", right = "file_info_fg" },
-              condition = false,
-            },
+        status.component.lsp { lsp_progress = false, surround = { separator = "right" }, padding = { right = 1 } },
+        status.component.file_info {
+          -- we only want filename to be used and we can change the fname
+          -- function to get the current working directory name
+          filename = { fname = function(nr) return vim.fn.getcwd(nr) end, padding = { left = 1 } },
+          -- disable all other elements of the file_info component
+          file_icon = false,
+          file_modified = false,
+          file_read_only = false,
+          hl = { fg = "bg" },
+          -- use no separator for this part but define a background color
+          surround = {
+            separator = "none",
+            color = { main = "file_info_bg", right = "file_info_fg" },
+            condition = false,
           },
         },
         -- the final component of the NvChad statusline is the navigation section
