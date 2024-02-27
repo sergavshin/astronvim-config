@@ -20,7 +20,17 @@ return {
       return opts
     end,
   },
-  { "rcarriga/nvim-notify",         enabled = false },
+  {
+    "rcarriga/nvim-notify",
+    as = "notify",
+    opts = function(_, opts)
+      opts.render = "minimal"
+      opts.stages = "static"
+      opts.level = "error"
+      opts.timeout = 2000
+      return opts
+    end,
+  },
   { "max397574/better-escape.nvim", enabled = false },
   {
     "nvim-neo-tree/neo-tree.nvim",

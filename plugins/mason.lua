@@ -41,7 +41,7 @@ return {
     "jay-babu/mason-null-ls.nvim",
     -- overrides `require("mason-null-ls").setup(...)`
     opts = {
-      ensure_installed = { "prettier", "stylua", "luacheck", "ansible-lint", "fixjson", "yamllint", "stylelint" },
+      ensure_installed = { "prettierd", "stylua", "luacheck", "ansible-lint", "fixjson", "yamllint", "stylelint" },
     },
   },
   {
