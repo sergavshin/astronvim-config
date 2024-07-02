@@ -10,14 +10,10 @@ return {
         "ansiblels",
         "bashls",
         "clangd",
-        "neocmake",
         "cssls",
-        "cssmodules_ls",
         "dockerls",
         "docker_compose_language_service",
-        "emmet_language_server",
         "gopls",
-        "graphql",
         "html",
         "jsonls",
         "lua_ls",
@@ -44,7 +40,13 @@ return {
     opts = function(_, opts)
       -- add more things to the ensure_installed table protecting against community packs modifying it
       opts.ensure_installed = require("astrocore").list_insert_unique(opts.ensure_installed, {
-        "prettierd", "stylua", "luacheck", "ansible-lint", "fixjson", "yamllint", "stylelint" 
+        "prettierd",
+        "stylua",
+        "luacheck",
+        "ansible-lint",
+        "fixjson",
+        "yamllint",
+        "stylelint",
       })
     end,
   },
