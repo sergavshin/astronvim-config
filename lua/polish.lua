@@ -4,7 +4,6 @@
 
 vim.lsp.set_log_level "off"
 vim.wo.foldcolumn = "0"
-vim.opt.guicursor = "n-v-c-sm:block,i-ci-ve:ver50-Cursor,r-cr-o:hor20"
 -- Set up custom filetypes
 vim.filetype.add {
   filename = {
@@ -17,3 +16,14 @@ vim.filetype.add {
     [".env.test.local"] = "sh",
   },
 }
+
+vim.opt.smartindent = false
+vim.opt.expandtab = true
+vim.opt.tabstop = 2
+vim.opt.shiftwidth = 2
+vim.opt.softtabstop = 2
+vim.cmd.filetype "indent off"
+vim.bo.expandtab = true
+vim.bo.shiftwidth = 2
+vim.bo.tabstop = 2
+vim.bo.softtabstop = 2

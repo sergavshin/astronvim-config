@@ -2,12 +2,13 @@
 return {
   "nvim-treesitter/nvim-treesitter",
   opts = function(_, opts)
+    -- check if an `indent` table exists, if not, create it
+    if not opts.indent then opts.indent = {} end
+    -- once we know it is created, we can set the sub-keys
+    opts.indent.enable = true
     -- add more things to the ensure_installed table protecting against community packs modifying it
     opts.ensure_installed = require("astrocore").list_insert_unique(opts.ensure_installed, {
-      "cmake",
       "comment",
-      "cmake",
-      "cpp",
       "css",
       "csv",
       "diff",
@@ -19,8 +20,6 @@ return {
       "gitcommit",
       "gitignore",
       "go",
-      "hcl",
-      "hjson",
       "html",
       "ini",
       "java",
@@ -32,12 +31,9 @@ return {
       "lua",
       "luadoc",
       "ninja",
-      "passwd",
-      "pem",
       "php",
       "prisma",
       "python",
-      "regex",
       "requirements",
       "rust",
       "scss",
@@ -51,7 +47,6 @@ return {
       "vue",
       "xml",
       "yaml",
-
     })
   end,
 }

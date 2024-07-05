@@ -34,8 +34,9 @@ return {
       },
       timeout_ms = 2000, -- default format timeout
       -- filter = function(client) -- fully override the default formatting function
+      --   if vim.bo.filetype == "javascript" then return client.name == "null-ls" end
       --   return true
-      -- end
+      -- end,
     },
     -- enable servers that you already have installed without mason
     servers = {
